@@ -60,9 +60,14 @@ GameManager.prototype.setup = function () {
 
 // Set up the initial tiles to start the game with
 GameManager.prototype.addStartTiles = function () {
-  for (var i = 0; i < this.startTiles; i++) {
-    this.addRandomTile();
-  }
+  //for (var i = 0; i < this.startTiles; i++) {
+  //  this.addRandomTile();
+  //}
+  this.grid.insertTile(new Tile({ x: 3, y: 3 }, 4096));
+  this.grid.insertTile(new Tile({ x: 2, y: 3 }, 2048));
+  this.grid.insertTile(new Tile({ x: 1, y: 3 }, 1024));
+  this.grid.insertTile(new Tile({ x: 0, y: 3 }, 512));
+  this.addRandomTile();
 };
 
 // Adds a tile in a random position
